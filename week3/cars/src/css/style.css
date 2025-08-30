@@ -1,0 +1,144 @@
+* {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body{
+    background-color: #F2EFDF;
+    margin: 0px;
+}
+
+
+.centerNav{
+    text-align: center;
+    position: sticky;
+    top: 25px;
+}
+
+
+nav {
+    background-color: #23260B;
+    text-align: center;
+    padding: 10px;
+    border-radius: 18px;
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+nav .active{
+    font-weight: bold;
+    color: #d3ce3d;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+nav a:hover{
+    color: #d3ce3d;
+}
+
+.banner{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.banner-img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px #9BA7BF;
+    display: inline-block;
+}
+
+.banner-p{
+    display: inline-block;
+    margin: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: justify;
+    font-size: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #23260B;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.gallerySection{
+    background-color: #c4d9d7;
+    padding-top:60px;
+    padding-bottom: 120px;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+section {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.myTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.myTable, th, td {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+}
+
+.myTable th,td{
+    padding:10px;
+}
+
+.myTable thead {
+    text-align: center;
+    background-color: #4C5958;
+    color: #BFBFBF;
+}
+
+
+.maintenance-tips {
+    list-style-type: none;
+    list-style-position: inside;
+    padding-left: 20px;
+    text-align: center;
+}
+
+
+.quoteSection{
+    background-color: #10403B;
+    padding: 30px;
+    border-radius: 8px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.quoteSection cite{
+    font-style: italic;
+    font-weight: bolder;
+    font-variant: small-caps;
+    font-size: larger;
+    color: #ffffff;
+}
