@@ -1,0 +1,11 @@
+# Learning objectives
+----------
+ - Comments
+ - Variables
+ - Data types
+ - Operators
+ - Conditions
+ - Loops
+ - Functions
+ - Arrays
+ - Dictionaries
