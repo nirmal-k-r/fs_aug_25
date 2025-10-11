@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+
+</head>
+    <body>
+        <section>
+            <h1 id="title">Slideshow</h1>
+            <button onclick="previous()">Previous</button>
+            <img id="slideshow" src="" style="max-width: 500px;">
+            <button onclick="next()">Next</button>
+
+        </section>
+        
+    </body>
+
+    <script>
+        var images=['https://imageio.forbes.com/specials-images/imageserve/5d3703e2f1176b00089761a6/2020-Chevrolet-Corvette-Stingray/0x0.jpg?crop=4560,2565,x836,y799,safe&height=399&width=711&fit=bounds','https://media.ed.edmunds-media.com/bugatti/chiron/2024/fe/2024_bugatti_chiron_f34_fe_110424_1600.jpg', 'https://media.cdn-jaguarlandrover.com/api/v2/images/29518/w/1600/h/900.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwQlX93w98u8xwhFCMwECxw00V-ap_3xjBBQ&s'
+        ]
+
+        image=document.getElementById('slideshow');
+        var position =0;
+        image.src=images[position];
+
+
+        function next(){
+            position=position+1;
+            if (position>=images.length){
+                position=0;
+            }
+            image.src=images[position];
+        }
+
+        function previous(){
+            position=position-1;
+            if (position<0){
+                position=images.length-1;
+            }
+            image.src=images[position];
+        }
+
+        //timer for auto slide
+        setInterval(next,3000); //in milliseconds
+
+    </script>
+</html>

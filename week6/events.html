@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event handling</title>
+
+
+        <style>
+            /* .light{
+                background-color: white;
+                color: black;
+            } */
+
+            .dark{
+                background-color: black;
+                color: white;
+            }
+
+
+
+        </style>
+    </head>
+
+    <body >
+        <button onclick="toggleStyle()">Light/Dark mode</button>
+        <br><br>
+        <h1 id="title">Login</h1>
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <input type="password" id="password" placeholder="Enter your password">
+        
+
+        <button onclick="login()">Login</button>
+
+
+         <button onclick="changeTitle()">Register</button>
+
+
+         <br><br>
+
+     
+        <section>   
+            <div>
+                <h1>Items</h1>
+                <input type="text" id="item" placeholder="Enter item name">
+                <button id="addItem">Add Item</button>
+                <button id="clear">Clear Items</button>
+            </div>
+
+            <div>
+                <ul id="list">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+     
+                </ul>
+
+            </div>
+           
+        </section>
+
+
+            <br><br>
+
+
+         <button id="hoverButton">Hover over me</button>
+    </body>
+
+
+    <script>
+        let title=document.getElementById('title');
+        console.log(title);
+        console.log(title.innerHTML);
+        console.log(title.textContent);
+
+
+        function checkName(){
+            name=document.getElementById('name').value;
+            console.log(name);
+        }
+
+        function login(){
+                let name=document.getElementById('name').value;
+                let password=document.getElementById('password').value;
+                
+            if(name=="admin" && password=='12345'){
+                console.log("Login successful. Welcome admin!");
+                window.location.href="https://google.com";
+            }else{
+                console.log("Login failed. Invalid credentials.");
+            }
+        }
+
+        function changeTitle(){
+            let title=document.querySelector('#title');
+            title.textContent="Register";
+        }
+
+        //create an event listener
+
+        let clearBtn=document.getElementById('clear');
+        clearBtn.addEventListener('click', clearItems);
+        
+
+        function clearItems(){
+            document.querySelector('#list').innerHTML="";
+        }
+
+
+
+        //event listener for additem
+
+        addItemBtn=document.getElementById('addItem');
+        addItemBtn.addEventListener('click', addItem);
+
+        function addItem(){
+            list=document.getElementById('list');
+            newItemName=document.getElementById('item').value;
+
+            newItem=document.createElement('li');
+            newItem.textContent=newItemName;
+            list.appendChild(newItem);
+        }
+
+
+        //hover event
+        hoverButton=document.getElementById('hoverButton');
+        hoverButton.addEventListener('mouseover', hovering);
+        hoverButton.addEventListener('mouseout', unhovering);
+
+
+        function hovering(){
+            console.log("You hovered over the button");
+            document.body.style.backgroundColor='lightblue';
+            document.body.style.color='red';
+        }
+
+        function unhovering(){
+            document.body.style.backgroundColor='';
+            document.body.style.color='';
+        }
+
+
+        function toggleStyle(){
+            document.body.classList.toggle('dark');
+
+            // document.body.classList.add('light');
+        }
+
+
+
+
+    </script>
+</html>

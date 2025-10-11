@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Basics</title>
+    </head>
+
+    <body>
+        <h1>Loan Calculator</h1>
+        <p>This is a simple loan calculator.</p>
+
+        <button onclick="calculateLoan()">Calculate Loan</button>
+
+    </body>
+
+    <script>
+
+       function calculateLoan(){
+            let principal = prompt("Enter the loan amount (principal):");
+            let annualRate =7.5;
+            let years = prompt("Enter the loan term (in years):");
+
+            // Convert annual rate to monthly and decimal
+            let monthlyRate = (annualRate / 100) / 12;
+            let numberOfPayments = years * 12;
+
+            // Calculate monthly payment using the formula
+            let monthlyPayment = (principal * monthlyRate) / (1 - Math.pow((1 + monthlyRate), -numberOfPayments));
+            monthlyPayment = monthlyPayment.toFixed(2);
+
+            alert("Your monthly payment is: Rs" + monthlyPayment);
+            console.log("Loan Amount: Rs" + principal);
+            console.log("Annual Interest Rate: " + annualRate + "%");
+            console.log("Loan Term: " + years + " years");
+            console.log("Monthly Payment: Rs" + monthlyPayment);
+        }
+    
+
+    </script>
+</html>

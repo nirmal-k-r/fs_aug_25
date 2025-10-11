@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search</title>
+    </head>
+    <body>
+
+        <h1>Search</h1>
+
+        <input type="text" id="searchInput" placeholder="Type to search...">
+    
+
+        <ul id="resultsList">
+        </ul>
+        
+        
+    </body>
+
+    <script>
+
+        var products = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Pineapple', 'Mango', 'Orange', 'Papaya', 'Quince', 'Raspberry', 'Strawberry', 'Tomato', 'Ugli fruit', 'Watermelon'];
+        searchBtn=document.getElementById('searchInput');
+
+        let resultsList=document.getElementById('resultsList');
+
+        searchBtn.addEventListener('keydown', search);
+
+        function search(){
+            resultsList.innerHTML=''; //clear results list
+            let query=searchBtn.value.toLowerCase();
+
+            for (product of products){
+                if (product.toLowerCase().includes(query)){
+                    let li=document.createElement('li');//create a new list item
+                    li.textContent=product; //set the text content to the product name
+                    resultsList.appendChild(li); //add the list item to the results list
+                }
+            }
+        }
+
+    </script>
+
+
+</html>
